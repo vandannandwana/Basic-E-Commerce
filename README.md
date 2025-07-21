@@ -1,37 +1,88 @@
-# E-Commerce Go App
 
-A simple e-commerce application built with Go, using SQLite for storage and a clean folder architecture.
+🛒 E-Commerce Go App
+=====================
 
-## 🚀 Getting Started
+A simple e-commerce backend built with Go and SQLite, featuring clean architecture and modular design.
 
-### 1. Clone the Repository
+------------------------------------------------------------
 
-```bash
-git clone https://github.com/vandannandwana/Basic-E-Commerce.git
-cd Basic-E-Commerce
+🚀 Getting Started
+------------------
 
-### 2. Download Required Dependencies
+Follow the steps below to set up and run the project.
 
-go mod tidy
+1. Clone the Repository
+------------------------
 
-### 3. Configuration Part
+    git clone https://github.com/vandannandwana/Basic-E-Commerce.git
+    cd Basic-E-Commerce
 
-mkdir config
+2. Install Dependencies
+------------------------
 
-# config/local.yaml
+Ensure you have Go installed (v1.18 or higher), then run:
 
-env: "dev"
-storage_path: "storage/storage.db"
-http_server:
-  address: "localhost:8082"
+    go mod tidy
 
-### 4. Database Setup
+3. Configuration Setup
+-----------------------
 
-mkdir storage
+Create a config folder and a local.yaml file inside it:
 
-sqlite3 storage/storage.db
+    mkdir config
 
-## You are All Set to Go
+Create config/local.yaml with the following content:
 
-go run .\cmd\e-commerce\main.go
+    env: "dev"
+    storage_path: "storage/storage.db"
+    http_server:
+      address: "localhost:8082"
 
+4. Database Setup
+------------------
+
+Create the storage folder and initialize the SQLite database:
+
+    mkdir storage
+    sqlite3 storage/storage.db
+
+(You can also allow your Go code to create the database schema automatically if implemented.)
+
+✅ Run the Application
+----------------------
+
+Start the application using:
+
+    go run ./cmd/e-commerce/main.go
+
+The server will start on http://localhost:8082 (as per local.yaml).
+
+------------------------------------------------------------
+
+🧾 Project Structure
+--------------------
+
+.
+├── cmd\e-commerce\main.go        # Entry point
+├── config\local.yaml              # App config
+├── internal                        # Application logic
+│   ├── config\config.go
+│   ├── http\handlers\product.go
+│   ├── storage\sqlite.go
+│   ├── types\types.go
+│   └── utils\response\response.go
+├── storage\storage.db             # SQLite database
+├── go.mod
+├── go.sum
+└── .gitignore
+
+📌 Notes
+--------
+
+- Make sure local.yaml and storage.db are listed in .gitignore to avoid pushing sensitive or environment-specific data.
+- This project is a great foundation for learning or building real-world Go services.
+
+📄 License
+----------
+
+MIT License — feel free to use and modify.
