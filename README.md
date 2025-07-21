@@ -84,7 +84,7 @@ Below are the available product-related API endpoints:
     Example (using curl):
     curl -X POST http://localhost:8082/api/products \
          -H "Content-Type: application/json" \
-         -d '{"name":"Laptop","price":50000,"quantity":10}'
+         -d '{"name":"Laptop","price":50000,"description":"Description of Laptop"}'
 
 2. Get a Product by ID
 -----------------------
