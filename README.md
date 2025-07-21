@@ -53,7 +53,7 @@ Create the storage folder and initialize the SQLite database:
 
 Start the application using:
 
-    go run ./cmd/e-commerce/main.go
+    go run ./cmd/e-commerce/main.go -config config/local.yaml
 
 The server will start on http://localhost:8082 (as per local.yaml).
 
