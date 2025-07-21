@@ -59,23 +59,6 @@ The server will start on http://localhost:8082 (as per local.yaml).
 
 ------------------------------------------------------------
 
-🧾 Project Structure
---------------------
-
-.
-├── cmd\e-commerce\main.go        # Entry point
-├── config\local.yaml              # App config
-├── internal                        # Application logic
-│   ├── config\config.go
-│   ├── http\handlers\product.go
-│   ├── storage\sqlite.go
-│   ├── types\types.go
-│   └── utils\response\response.go
-├── storage\storage.db             # SQLite database
-├── go.mod
-├── go.sum
-└── .gitignore
-
 📌 Notes
 --------
 
@@ -86,3 +69,40 @@ The server will start on http://localhost:8082 (as per local.yaml).
 ----------
 
 MIT License — feel free to use and modify.
+
+------------------------------------------------------------
+
+📡 API Endpoints
+----------------
+
+Below are the available product-related API endpoints:
+
+1. Create a New Product
+------------------------
+    POST /api/products
+
+    Example (using curl):
+    curl -X POST http://localhost:8082/api/products \
+         -H "Content-Type: application/json" \
+         -d '{"name":"Laptop","price":50000,"quantity":10}'
+
+2. Get a Product by ID
+-----------------------
+    GET /api/products/{id}
+
+    Example:
+    curl http://localhost:8082/api/products/1
+
+3. Get All Products
+--------------------
+    GET /api/products
+
+    Example:
+    curl http://localhost:8082/api/products
+
+4. Delete a Product by ID
+--------------------------
+    DELETE /api/products/{id}
+
+    Example:
+    curl -X DELETE http://localhost:8082/api/products/1
