@@ -1,0 +1,36 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go build outputs
+**/main
+**/*.exe
+**/*.test
+
+# Local configuration
+config/local.yaml
+
+# SQLite database
+/storage/storage.db
+
+# Vendor directory (if you're not committing it)
+vendor/
+
+# IDE/editor specific
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs and temp files
+*.log
+*.tmp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
