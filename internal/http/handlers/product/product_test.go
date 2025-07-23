@@ -144,17 +144,34 @@ func TestGetProductById(t *testing.T){
 
 	router := setupRouter()
 
-	createTestProduct(router, t)
+	t.Run("Testing by inserting the right id", func(t *testing.T){
 
-	req := httptest.NewRequest("GET", "/api/products/1", nil)
+		createTestProduct(router, t)
 
-	w := httptest.NewRecorder()
+		req := httptest.NewRequest("GET", "/api/products/1", nil)
 
-	router.ServeHTTP(w, req)
+		w := httptest.NewRecorder()
 
-	if w.Code != http.StatusNotFound {
-		t.Errorf("expected 404 Not Found, got %d", w.Code)
-	}
+		router.ServeHTTP(w, req)
+
+		if w.Code != http.StatusNotFound {
+			t.Errorf("expected 404 Not Found, got %d", w.Code)
+		}
+
+	})
+
+	t.Run("Testing while inserting id which is not present in the database", func (t *testing.T){
+		req := httptest.NewRequest("GET", "/api/products/-1", nil)
+
+		w := httptest.NewRecorder()
+
+		router.ServeHTTP(w, req)
+
+		if w.Code != http.StatusNotFound{
+			t.Errorf("expected 404 Not Found, got %d", w.Code)
+		}
+
+	})
 
 }
 

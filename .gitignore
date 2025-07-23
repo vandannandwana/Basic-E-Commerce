@@ -12,6 +12,9 @@
 **/*.exe
 **/*.test
 
+#coverage.out
+coverage
+
 # Local configuration
 config/local.yaml
 
