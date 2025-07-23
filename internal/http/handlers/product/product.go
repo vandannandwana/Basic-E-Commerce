@@ -33,7 +33,7 @@ func DeleteProductById(storage storage.Storage) http.HandlerFunc{
 		_, err = storage.DeleteProductById(id)
 
 		if err != nil{
-			response.WriteJson(writer, http.StatusInternalServerError, response.GeneralError(err))
+			response.WriteJson(writer, http.StatusNoContent, response.GeneralError(err))
 			return 
 		}
 
@@ -64,7 +64,7 @@ func GetProductById(storage storage.Storage) http.HandlerFunc{
 
 		if err != nil{
 			slog.Error("error getting the product of ", slog.String("id: ", _id))
-			response.WriteJson(writer, http.StatusInternalServerError, response.GeneralError(err))
+			response.WriteJson(writer, http.StatusNotFound, response.GeneralError(err))
 			return 
 		}
 
@@ -129,7 +129,7 @@ func New(storage storage.Storage) http.HandlerFunc {
 
 		slog.Info("Product Created Successfully", slog.String("Product ID: ", fmt.Sprintf("%d", lastId)))
 
-		response.WriteJson(writer, http.StatusOK, lastId)
+		response.WriteJson(writer, http.StatusCreated, map[string] any {"id":lastId})
 
 	}
 
