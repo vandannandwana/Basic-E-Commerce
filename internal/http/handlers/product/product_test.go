@@ -40,29 +40,71 @@ func TestNew (t *testing.T){
 
 	router := setupRouter()
 
-	productPayLoad := map[string] interface{}{
-		"name":"Product 1",
-		"price":2000,
-		"description":"Description of product 1",
-	}
+	t.Run("Testing while entering right inputs", func(t *testing.T){
 
-	body, _ := json.Marshal(productPayLoad)
+		productPayLoad := map[string] any{
+			"name":"Product 1",
+			"price":2000,
+			"description":"Description of product 1",
+		}
 
-	req := httptest.NewRequest("POST", "/api/products", bytes.NewReader(body))
+		body, _ := json.Marshal(productPayLoad)
 
-	w := httptest.NewRecorder()
+		req := httptest.NewRequest("POST", "/api/products", bytes.NewReader(body))
 
-	router.ServeHTTP(w, req)
+		w := httptest.NewRecorder()
 
-	if w.Code != http.StatusCreated{
-		t.Errorf("Expected status 201 Created, got %d", w.Code)
-	}
+		router.ServeHTTP(w, req)
 
-	var respBody map[string] interface{}
+		if w.Code != http.StatusCreated{
+			t.Errorf("Expected status 201 Created, got %d", w.Code)
+		}
 
-	if err := json.Unmarshal(w.Body.Bytes(), &respBody); err != nil{
-		t.Errorf("failed to parese response %v", err)
-	}
+		var respBody map[string] interface{}
+
+		if err := json.Unmarshal(w.Body.Bytes(), &respBody); err != nil{
+			t.Errorf("failed to parese response %v", err)
+		}
+
+	})
+	
+	t.Run("Testing Validations of required parameters", func(t *testing.T){
+
+		productPayLoad := map[string] any{
+			// not adding the name
+			"price":2000,
+			"description":"Description of product 1",
+		}
+
+		body, _ := json.Marshal(productPayLoad)
+
+		req := httptest.NewRequest("POST", "/api/products", bytes.NewReader(body))
+
+		w := httptest.NewRecorder()
+
+		router.ServeHTTP(w, req)
+
+		if w.Code != http.StatusBadRequest{
+			t.Errorf("Expected status 400 Created, got %d", w.Code)
+		}
+
+
+	})
+
+	t.Run("Testing EOF error", func (t *testing.T){
+
+		req := httptest.NewRequest("POST", "/api/products", nil)
+
+		w := httptest.NewRecorder()
+
+		router.ServeHTTP(w, req)
+
+		if w.Code != http.StatusBadRequest{
+			t.Errorf("Expected status 400 Bad Request, got %d", w.Code)
+		}
+
+	})
+
 
 }
 
