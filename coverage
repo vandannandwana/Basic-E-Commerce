@@ -1,0 +1,27 @@
+mode: set
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:20.65,22.64 1 1
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:22.64,28.16 3 1
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:28.16,31.4 2 0
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:33.3,35.16 2 1
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:35.16,38.4 2 0
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:40.3,42.52 2 1
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:50.62,52.64 1 1
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:52.64,58.16 3 1
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:58.16,61.4 2 0
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:63.3,65.16 2 1
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:65.16,69.4 3 1
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:71.3,72.53 2 0
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:79.59,81.64 1 1
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:81.64,86.16 3 1
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:86.16,89.4 2 0
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:91.3,91.54 1 1
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:98.52,100.65 1 1
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:100.65,107.29 4 1
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:107.29,110.4 2 0
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:112.3,112.16 1 1
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:112.16,115.4 2 0
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:117.3,117.56 1 1
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:117.56,121.4 3 0
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:123.3,125.16 2 1
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:125.16,128.4 2 0
+github.com/vandannandwana/Basic-E-Commerce/internal/http/handlers/product/product.go:130.3,132.80 2 1

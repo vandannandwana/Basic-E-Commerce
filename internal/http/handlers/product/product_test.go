@@ -36,35 +36,35 @@ func setupRouter() http.Handler{
 
 }
 
-// func TestNew (t *testing.T){
+func TestNew (t *testing.T){
 
-// 	router := setupRouter()
+	router := setupRouter()
 
-// 	productPayLoad := map[string] interface{}{
-// 		"name":"Product 1",
-// 		"price":2000,
-// 		"description":"Description of product 1",
-// 	}
+	productPayLoad := map[string] interface{}{
+		"name":"Product 1",
+		"price":2000,
+		"description":"Description of product 1",
+	}
 
-// 	body, _ := json.Marshal(productPayLoad)
+	body, _ := json.Marshal(productPayLoad)
 
-// 	req := httptest.NewRequest("POST", "/api/products", bytes.NewReader(body))
+	req := httptest.NewRequest("POST", "/api/products", bytes.NewReader(body))
 
-// 	w := httptest.NewRecorder()
+	w := httptest.NewRecorder()
 
-// 	router.ServeHTTP(w, req)
+	router.ServeHTTP(w, req)
 
-// 	if w.Code != http.StatusCreated{
-// 		t.Errorf("Expected status 201 Created, got %d", w.Code)
-// 	}
+	if w.Code != http.StatusCreated{
+		t.Errorf("Expected status 201 Created, got %d", w.Code)
+	}
 
-// 	var respBody map[string] interface{}
+	var respBody map[string] interface{}
 
-// 	if err := json.Unmarshal(w.Body.Bytes(), &respBody); err != nil{
-// 		t.Errorf("failed to parese response %v", err)
-// 	}
+	if err := json.Unmarshal(w.Body.Bytes(), &respBody); err != nil{
+		t.Errorf("failed to parese response %v", err)
+	}
 
-// }
+}
 
 func createTestProduct(router http.Handler, t *testing.T) int {
 	body := map[string]any{
