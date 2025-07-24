@@ -36,7 +36,7 @@ Create config/local.yaml with the following content:
     env: "dev"
     storage_path: "storage/storage.db"
     http_server:
-      address: "localhost:8082"
+      address: "0.0.0.0:8082"
 
 4. Database Setup
 ------------------
